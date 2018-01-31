@@ -15,12 +15,14 @@ class ZipCode extends React.Component {
 
 
 
-  handleSubmitZipCode(event) {
-    event.preventDefault();
+  handleSubmitZipCode() {
+    this.props.onSubmitZipcode(this.state.zipcode);
 
-    this.props.onSubmit(
-
-    )
+    this.setState(function () {
+      return {
+        zipcode: ''
+      }
+    })
   }
 
   handleUpdateZipCode(event) {

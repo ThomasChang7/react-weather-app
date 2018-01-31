@@ -1,13 +1,14 @@
 var React = require('react');
 var Navbar = require('./Navbar')
-var ZipCode = require('./ZipCode');
 var ReactRouter = require('react-router-dom');
 var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
 var Switch = ReactRouter.Switch;
 require('../../css/style.css');
+var Home = require('./Home');
+var About = require('./About');
+var Forecast = require('./Forecast');
 
-var branches = require('../../assets/branches.png');
 
 class App extends React.Component {
   render() {
@@ -15,14 +16,11 @@ class App extends React.Component {
       <Router>
         <div className='container'>
           <Navbar />
-          <div className='home-container' style={{ backgroundImage: "url(" + branches + ")" }}>
-            <h1 className='header'>
-              Enter a City and State
-              <ZipCode />
-            </h1>
-          </div>
-
-
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/forecast' component={Forecast} />
+          </Switch>
         </div>
       </Router>
     )
