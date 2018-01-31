@@ -9,7 +9,7 @@ const paths = {
 };
 
 module.exports = {
-  entry: path.join(paths.JS, 'app.js'),
+  entry: path.join(paths.JS, 'index.js'),
   output: {
     path: paths.DIST,
     filename: 'app.bundle.js'
@@ -34,6 +34,12 @@ module.exports = {
         loader: ExtractTextPlugin.extract({
           use: 'css-loader',
         })
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
       },
     ],
   },
