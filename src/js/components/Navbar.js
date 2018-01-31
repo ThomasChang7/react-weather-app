@@ -14,11 +14,6 @@ class Navbar extends React.Component {
             </NavLink>
           </li>
           <li>
-            <NavLink exact activeClassName='active' to='/weather'>
-              Weather
-            </NavLink>
-          </li>
-          <li>
             <NavLink exact activeClassName='active' to='/about'>
               About
             </NavLink>
